@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+// import '../../main.css';
+import MovieGridContainer from '../MovieGrid/MovieGridContainer'
 
-export default class App extends Component {
-  constructor() {
-    super();
-  }
-
-  componentWillMount() {
-    this.props.fetchMovies();
-  } 
-
-  render() {
-    return (
-      <div>
-        <h1>Movie Watcher</h1>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div className='App'>
+      <MovieGridContainer />
+    </div>
+  )
 }
+
+export default App
