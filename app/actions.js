@@ -38,8 +38,15 @@ export const showFavorites= () => {
 export const fetchMovies = () => {
   return dispatch => {
     fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=cbe22e12e2a525d944ad1729b43212d3&language=en-US&page=1')
-    .then(response=>response.json())
-    .then((movies)=> { return dispatch(showAll(movies.results)) })
-    .catch(()=> {console.log('fetching error')})
+    .then((response) => {
+      return response.json()
+    })
+    .then((movies) => {
+      console.log(movies);
+      return dispatch( showAll(movies.results) )
+    })
+    .catch(() => {
+      console.log('fetching error')
+    });
   }
 }

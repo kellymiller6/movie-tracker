@@ -5,6 +5,10 @@ export default class App extends Component {
     super();
   }
 
+  componentWillMount() {
+    this.props.fetchMovies();
+  } 
+
   render() {
     return (
       <div>
