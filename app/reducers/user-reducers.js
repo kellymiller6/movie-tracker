@@ -7,7 +7,7 @@ const userObj = {
 const userReducer = (state=userObj, action) => {
   switch(action.type){
     case 'CREATE_ACCOUNT':
-      return 
+      return
     case 'SIGN_IN':
       return
     case 'SIGN_OUT':
@@ -17,4 +17,4 @@ const userReducer = (state=userObj, action) => {
   }
 }
 
-export default movieReducer
+export default userReducer
