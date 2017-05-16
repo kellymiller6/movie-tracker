@@ -4,6 +4,13 @@ const movieReducer = (state=[], action) => {
       return [...state, ...apiResponse]
     case 'SHOW_FAVORITES':
       return [...action.userFavorites]
+    case 'TOGGLE_FAVORITES':
+      return state.map(movie => {
+        if(movie.id !== action.id) {
+          return movie
+        }
+        return Object.assign({}, todo, {favorited: !movie.favorited})
+      })
     default:
       return state;
   }

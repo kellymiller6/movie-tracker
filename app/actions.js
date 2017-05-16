@@ -7,17 +7,18 @@ export const createAccout = (name, password, email) => {
   }
 }
 
-export const signIn = (id) => {
+export const signIn = (email, password) => {
   return {
     type: 'SIGN_IN',
-    id
+    email,
+    password
   }
 }
 
-export const signOut = (filter) => {
+export const signOut = () => {
   return {
-    type: 'SIGN_OUT',
-    filter
+    type: 'SIGN_OUT'
+
   }
 }
 
