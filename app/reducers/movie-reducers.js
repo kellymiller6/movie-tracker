@@ -1,7 +1,7 @@
 const movieReducer = (state=[], action) => {
   switch(action.type){
     case 'SHOW_ALL':
-      return [...state, ...apiResponse]
+      return [...state, ...action.movies.results]
     case 'SHOW_FAVORITES':
       return [...action.userFavorites]
     case 'TOGGLE_FAVORITES':
