@@ -42,8 +42,8 @@ export const fetchMovies = () => {
       return response.json()
     })
     .then((movies) => {
-      console.log(movies);
-      return dispatch( showAll(movies.results) )
+      console.log(movies.results);
+      return dispatch(showAll(movies))
     })
     .catch(() => {
       console.log('fetching error')
