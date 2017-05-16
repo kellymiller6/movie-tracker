@@ -1,6 +1,21 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app';
-import MovieIndex from './components/movieIndex';
+import './index.css';
 
-ReactDOM.render(<App/>, document.getElementById('main'))
+import React from 'react';
+import { render } from 'react-dom'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+// import rootReducer from '../src/reducers'
+import App from './components/App/app';
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const store = createStore(rootReducer, devTools);
+
+render(
+  <Provider store={store} >
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
