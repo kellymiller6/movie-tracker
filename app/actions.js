@@ -22,9 +22,9 @@ export const signOut = () => {
   }
 }
 
-export const showAll = (movies) => {
+export const receiveMovies = (movies) => {
   return {
-    type: 'SHOW_ALL',
+    type: 'RECEIVE_MOVIES',
     movies
   }
 }
@@ -43,7 +43,7 @@ export const fetchMovies = () => {
     })
     .then((movies) => {
       console.log(movies.results);
-      return dispatch(showAll(movies))
+      dispatch(receiveMovies(movies))
     })
     .catch(() => {
       console.log('fetching error')
