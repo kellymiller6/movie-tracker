@@ -10,12 +10,18 @@ export default class CreateUser extends Component {
     }
   }
 
-  handleCreateUser() {
-    
-  }
+  handleSubmit(e) {
+    e.preventDefault();
+    const { name, email, password } = this.state;
 
-  handleSubmit() {
-
+    fetch('/api/users/new', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({name, email, password})
+    })
+    .catch((error) => {
+      console.log(error, 'user already exists');
+    })
   }
 
   render() {
@@ -24,16 +30,26 @@ export default class CreateUser extends Component {
         <input type='text'
                placeholder='Name'
                value={this.state.name}
+               onChange={(e) => this.setState({
+                 name: e.target.value
+               })}
         />
         <input type='text'
                placeholder='E-Mail'
                value={this.state.email}
+               onChange={(e) => this.setState({
+                 email: e.target.value
+               })}
         />
         <input type='text'
                placeholder='Password'
                value={this.state.password}
+               onChange={(e) => this.setState({
+                 password: e.target.value
+               })}
         />
-        <button type='submit'>
+        <button type='submit'
+                onClick={(e) => this.handleSubmit(e)}>
           Create User Account
         </button>
       </form>
