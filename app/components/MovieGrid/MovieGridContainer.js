@@ -3,7 +3,7 @@ import MovieGrid from '../MovieGrid/MovieGrid';
 import { fetchMovies, showAll } from '../../actions';
 
 const mapStateToProps = (state) => {
-  return state;
+  return { movies: state.movieReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -11,6 +11,5 @@ const mapDispatchToProps = (dispatch) => {
     fetchMovies: () =>  dispatch(fetchMovies())
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieGrid);

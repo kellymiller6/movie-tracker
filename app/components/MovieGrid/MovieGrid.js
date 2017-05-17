@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Movie from '../Movie/Movie'
 
 export default class MovieGrid extends Component {
   constructor() {
@@ -9,21 +10,19 @@ export default class MovieGrid extends Component {
     this.props.fetchMovies();
   }
 
-  displayMovies() {
-    this.props.state.movieReducer.map((movie) => {
-      return (
-        <Movie movieData={movie} />
-      )
-    })
-  }
 
   render() {
+    const movies = this.props.movies.map((movie) => {
+      return (
+        <Movie key={movie.id} movieData={movie} />
+      )
+    })
+
     return (
       <div>
         <h1>Movie Watcher</h1>
-
         <div>
-          {console.log(this.props)}
+          {movies}
         </div>
       </div>
     )
