@@ -1,10 +1,7 @@
-export const createAccount = (name, password, email, id) => {
+export const createAccount = (account) => {
   return {
     type: 'CREATE_ACCOUNT',
-    name,
-    password,
-    email,
-    id
+    account
   }
 }
 
@@ -38,25 +35,35 @@ export const showFavorites= (favorites) => {
 export const fetchMovies = () => {
   return dispatch => {
     fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=cbe22e12e2a525d944ad1729b43212d3&language=en-US&page=1')
-    .then((response) => {
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((movies) => {
-      console.log(movies.results);
-      dispatch(receiveMovies(movies));
+      dispatch(receiveMovies(movies))
     })
     .catch(() => {
-      console.log('fetching error');
-    });
+      console.log('fetching error')
+    })
   }
 }
 
 export const addFavorite = (info) => {
   return dispatch => {
-    fetch('api/users/favorites/new', {
+    fetch('/api/users/favorites/new', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({ info })
-    });
+    })
+  }
+}
+
+export const fetchFavorites = (userId) => {
+  return dispatch => {
+    fetch(`/api/users/${userId}/favorites`)
+    .then((response) => response.json())
+    .then((favorites) => {
+      dispatch(showFavorites(favorites))
+    })
+    .catch(() => {
+      console.log('fetching favorites error')
+    })
   }
 }
