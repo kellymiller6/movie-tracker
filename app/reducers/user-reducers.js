@@ -8,12 +8,12 @@ const userObj = {
 const userReducer = (state=userObj, action) => {
   switch(action.type){
     case 'CREATE_ACCOUNT':
-      return Object.assign({}, state, action.account)
+      return Object.assign({}, state, action.account);
     case 'SIGN_IN':
-      return Object.assign({}, state, action.user)
+      return Object.assign({}, state, action.user);
     default:
       return state;
   }
 }
 
-export default userReducer
+export default userReducer;
