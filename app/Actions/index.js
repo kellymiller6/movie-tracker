@@ -1,7 +1,7 @@
-export const createAccount = (account) => {
+export const createAccount = (user) => {
   return {
     type: 'CREATE_ACCOUNT',
-    account
+    user
   }
 }
 
