@@ -27,7 +27,7 @@ export const receiveMovies = (movies) => {
 
 export const showFavorites= (favorites) => {
   return {
-    type: 'SHOW_FAVORITES'
+    type: 'SHOW_FAVORITES',
     favorites
   }
 }
