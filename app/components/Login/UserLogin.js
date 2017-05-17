@@ -12,6 +12,7 @@ export default class UserLogin extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { email, password } = this.state;
+    const { signIn } = this.props;
 
     fetch('/api/users/', {
       method: "GET",
@@ -24,7 +25,7 @@ export default class UserLogin extends Component {
       })
     })
     .then(user => {
-      console.log(user);
+      return signIn(user);
     })
     .catch((error) => {
       console.log(error, 'cannot find user');
