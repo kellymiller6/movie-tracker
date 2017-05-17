@@ -55,6 +55,16 @@ export const addFavorite = (info) => {
   }
 }
 
+export const deleteFavorite = (userId, movieId) => {
+  return dispatch => {
+    fetch(`/api/users/${userId}/favorites/${movieId}`, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ userId, movieId })
+    })
+  }
+}
+
 export const fetchFavorites = (userId) => {
   return dispatch => {
     fetch(`/api/users/${userId}/favorites`)
