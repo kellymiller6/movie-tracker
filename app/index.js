@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
-import App from './components/App/App';
+import MovieGridContainer from './components/MovieGrid/MovieGridContainer';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
@@ -14,7 +14,7 @@ const store = createStore(rootReducer, devTools, applyMiddleware(thunk));
 
 render(
   <Provider store={store} >
-    <App />
+    <MovieGridContainer />
   </Provider>,
   document.getElementById('main')
 );
