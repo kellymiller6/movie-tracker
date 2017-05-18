@@ -15,9 +15,15 @@ export default class MovieGrid extends Component {
 
 
   render() {
+    const { userId, addFavorite, fetchFavorites } = this.props;
     const movies = this.props.movies.map((movie) => {
       return (
-        <Movie key={movie.id} movieData={movie} userId={this.props.userId} addFavorite={this.props.addFavorite}/>
+        <Movie key={movie.id}
+               movieData={movie}
+               userId={userId}
+               addFavorite={addFavorite}
+               fetchFavorites={fetchFavorites}
+        />
       )
     })
 

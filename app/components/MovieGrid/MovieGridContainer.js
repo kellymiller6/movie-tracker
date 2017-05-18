@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import MovieGrid from '../MovieGrid/MovieGrid';
-import { fetchMovies, addFavorite } from '../../actions/index.js';
+import { fetchMovies, addFavorite, fetchFavorites } from '../../actions/index.js';
 
 const mapStateToProps = (state) => {
-console.log(state);
   return { movies: state.movieReducer,
-           userId: state.userReducer.id }
+           userId: state.userReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchMovies: () =>  dispatch(fetchMovies()),
-    addFavorite: (movie_id, userId, title, poster_path, release_date, vote_average, overview) =>
-      dispatch(addFavorite(movie_id, userId, title, poster_path, release_date, vote_average, overview))
+    addFavorite: (id, userId, title, poster_path, release_date, vote_average, overview) =>
+      dispatch(addFavorite(id, userId, title, poster_path, release_date, vote_average, overview)),
+    fetchFavorites: (userId) => dispatch(fetchFavorites(userId))
   }
 }
 
