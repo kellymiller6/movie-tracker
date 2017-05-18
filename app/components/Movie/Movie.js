@@ -1,15 +1,15 @@
 import React from 'react';
 import './Movie.css'
 
-const Movie = ({movieData, userId, addFavorite, fetchFavorites}) => {
+const Movie = ({movieData, user, addFavorite, fetchFavorites}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
 
   const favoriteMovie = () => {
-    if (!userId.id) {
+    if (!user.id) {
       alert('Please log in or create an account')
     } else {
-      addFavorite(id, userId, title, poster_path, release_date, vote_average, overview)
+      addFavorite(id, user, title, poster_path, release_date, vote_average, overview)
     }
   }
 
