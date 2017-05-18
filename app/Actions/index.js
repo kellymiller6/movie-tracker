@@ -45,12 +45,12 @@ export const fetchMovies = () => {
   }
 }
 
-export const addFavorite = (movie_id, userId, title, poster_path, release_date, vote_average, overview) => {
+export const addFavorite = (id, userId, title, poster_path, release_date, vote_average, overview) => {
   return dispatch => {
     fetch('/api/users/favorites/new', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ movie_id, 'user_id': userId, title, poster_path, release_date, vote_average, overview })
+      body: JSON.stringify({ movie_id: id, user_id: userId.id, title, poster_path, release_date, vote_average, overview })
     })
   }
 }
@@ -67,7 +67,7 @@ export const deleteFavorite = (userId, movie_id) => {
 
 export const fetchFavorites = (userId) => {
   return dispatch => {
-    fetch(`/api/users/${userId}/favorites`)
+    fetch(`/api/users/${userId.id}/favorites`)
     .then((response) => response.json())
     .then((favorites) => {
       dispatch(showFavorites(favorites))
