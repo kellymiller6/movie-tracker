@@ -10,6 +10,7 @@ const Movie = ({movieData, user, addFavorite, fetchFavorites}) => {
       alert('Please log in or create an account')
     } else {
       addFavorite(id, user, title, poster_path, release_date, vote_average, overview)
+      fetchFavorites(user);
     }
   }
 

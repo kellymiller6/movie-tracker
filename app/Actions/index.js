@@ -66,11 +66,12 @@ export const deleteFavorite = (user, id) => {
 }
 
 export const fetchFavorites = (user) => {
+  console.log('i am about to hit the api');
   return dispatch => {
     fetch(`/api/users/${user.id}/favorites`)
     .then((response) => response.json())
     .then((favorites) => {
-      dispatch(showFavorites(favorites))
+      return dispatch(showFavorites(favorites.data))
     })
     .catch(() => {
       console.log('fetching favorites error')
