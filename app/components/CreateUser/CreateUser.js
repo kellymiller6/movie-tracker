@@ -20,7 +20,7 @@ export default class CreateUser extends Component {
       body: JSON.stringify({name, email, password})
     })
     .catch((error) => {
-      console.log(error, 'user already exists');
+      alert('user already exists');
     })
   }
 
