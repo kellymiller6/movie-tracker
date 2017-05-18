@@ -50,7 +50,7 @@ export const addFavorite = (movie_id, userId, title, poster_path, release_date, 
     fetch('/api/users/favorites/new', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ movie_id, user_id: userId, title, poster_path, release_date, vote_average, overview })
+      body: JSON.stringify({ movie_id, 'user_id': userId, title, poster_path, release_date, vote_average, overview })
     })
   }
 }
