@@ -19,9 +19,9 @@ export default class MovieGrid extends Component {
     })
 
     return (
-      <div>
+      <div className='header'>
         <h1>Movie Watcher</h1>
-        <div>
+        <div className='movie-grid'>
           {movies}
         </div>
       </div>

@@ -1,7 +1,67 @@
-h1 {
-  background-color: blue;
+/*movie grid*/
+.movie-grid{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d9e1e2;
+  justify-content: space-around;
 }
+
+.header {
+  height: 90px;
+  background-color: #255e69;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 17px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #131821;
+  font-family: 'Barrio', cursive;
+}
+
+
 
 #main {
   text-align: center;
+}
+
+
+
+/*movie card styling*/
+.movie-card {
+  width: 360px;
+  top: 0;
+  display: inline-block;
+  min-height: 700px;
+  margin: 20px 10px;
+  background-color: #9ebfc5;
+}
+
+.container {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.movie-img {
+  width: 100%;
+}
+
+.movie-title, .movie-overview {
+  width: 300px;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  color: #2c3442;
+}
+
+.movie-title{
+  margin-bottom: 10px;
+  font-family: 'Khula', sans-serif;
+  font-weight: bold;
+}
+
+.movie-overview {
+  padding-bottom: 15px;
 }
