@@ -9,8 +9,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchMovies: () =>  dispatch(fetchMovies())
-    addFavorite: (movie_id, userId, title, poster_path, release_date, vote_average, overview) =>
-      dispatch(addFavorite(movie_id, userId, title, poster_path, release_date, vote_average, overview))
+    // addFavorite: (movie_id, userId, title, poster_path, release_date, vote_average, overview) =>
+      // dispatch(addFavorite(movie_id, userId, title, poster_path, release_date, vote_average, overview))
   }
 }
 
