@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
 import NavBar from '../NavBar/NavBar';
@@ -14,15 +14,19 @@ export default class App  extends Component {
   render() {
     return (
       <div className='app'>
-        <Route exact path='/login' render={({history}) => <UserLoginContainer history={history} />}/>
-        <Route exact path='/create-account' render={({history}) => <CreateUserContainer history={history} />}/>
-
+        <Route exact path='/login'
+               render={({history}) => <UserLoginContainer history={history} />}
+             />
+        <Route exact path='/create-account'
+               render={({history}) => <CreateUserContainer history={history} />}
+             />
         <div className='header'>
           <h1>Movie Watcher</h1>
           <NavBar />
         </div>
-        <Route exact path='/' component={MovieGridContainer} />
-
+        <Route exact path='/'
+               component={MovieGridContainer}
+             />
       </div>
     )
   }

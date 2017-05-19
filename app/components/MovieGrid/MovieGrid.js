@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
-import Movie from '../Movie/Movie'
-
+import Movie from '../Movie/Movie';
 
 export default class MovieGrid extends Component {
   constructor() {
@@ -13,7 +12,6 @@ export default class MovieGrid extends Component {
     this.props.fetchMovies();
   }
 
-
   render() {
     const { movies, user, addFavorite, fetchFavorites } = this.props;
     const grid = movies.map((movie) => {
@@ -23,12 +21,11 @@ export default class MovieGrid extends Component {
                user={user}
                addFavorite={addFavorite}
                fetchFavorites={fetchFavorites}
-        />
+             />
       )
-    })
+    });
 
     return (
-      
       <div className='movie-grid'>
         {grid}
       </div>
