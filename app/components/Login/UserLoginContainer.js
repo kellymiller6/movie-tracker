@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserLogin from './UserLogin';
-import { signIn } from '../../Actions'
+import { signIn } from '../../Actions';
 
 const mapStateToProps = (state) => {
   return { activeUser: state.userReducer }
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(UserLogin);

@@ -14,16 +14,15 @@ export default class UserLogin extends Component {
     const { signIn } = this.props;
 
     let user = users.data.find(user => {
-      return ( user.email === email && user.password === password)
-    })
+      return (user.email === email && user.password === password);
+    });
 
     if (!user) {
-      return alert('could not find user, please check password or create an account')
-    } else if (user){
-      return signIn(user)
+      alert('could not find user, please check password or create an account');
+    } else if (user) {
+      return signIn(user);
     }
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -49,18 +48,18 @@ export default class UserLogin extends Component {
                onChange={(e) => this.setState({
                  email: e.target.value
                })}
-        />
+             />
         <input type='text'
                placeholder='Password'
                value={this.state.password}
                onChange={(e) => this.setState({
                  password: e.target.value
                })}
-        />
+             />
         <button type='submit'
                 onClick={(e) => this.handleSubmit(e)}>
-          Login
-        </button>
+                Login
+              </button>
       </form>
     )
   }
