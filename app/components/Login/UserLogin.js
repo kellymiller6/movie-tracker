@@ -11,7 +11,7 @@ export default class UserLogin extends Component {
 
   handleErrors(users) {
     const { email, password } = this.state;
-    const { signIn } = this.props;
+    const { signIn, history } = this.props;
 
     let user = users.data.find(user => {
       return (user.email === email && user.password === password);
@@ -20,6 +20,7 @@ export default class UserLogin extends Component {
     if (!user) {
       alert('could not find user, please check password or create an account');
     } else if (user) {
+      history.replace('/');
       return signIn(user);
     }
   }
@@ -37,6 +38,7 @@ export default class UserLogin extends Component {
     .catch((error) => {
       console.log(error, 'cannot find user');
     })
+
   }
 
   render() {
