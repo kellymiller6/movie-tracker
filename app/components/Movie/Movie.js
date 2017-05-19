@@ -26,9 +26,9 @@ const Movie = ({movieData, user, addFavorite, fetchFavorites}) => {
               Favorite
             </button>
       <h3 className='movie-title'>{title}</h3>
-      <p className='movie-overview'>{release_date}</p>
+      <p className='movie-overview'>Release Date: {release_date}</p>
       <p className='movie-overview'>{overview}</p>
-      <p className='movie-overview'>{vote_average}</p>
+      <p className='movie-overview'>Vote Average: {vote_average}</p>
     </div>
   )
 }
