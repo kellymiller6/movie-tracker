@@ -5,7 +5,8 @@ import './Movie.css';
 const Movie = ({movieData, user, addFavorite, deleteFavorite, favorites}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
-
+  console.log(favorites);
+  
   return (
     <div className='movie-card'>
       <div className='container'>
