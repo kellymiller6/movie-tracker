@@ -1,18 +1,10 @@
 import React from 'react';
+
 import './Movie.css';
 
-const Movie = ({movieData, user, addFavorite, fetchFavorites}) => {
+const Movie = ({movieData, user, addFavorite, deleteFavorite, favorites}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
-
-  const favoriteMovie = () => {
-    if (!user.id) {
-      alert('Please log in or create an account');
-    } else {
-      addFavorite(id, user, title, poster_path, release_date, vote_average, overview);
-      fetchFavorites(user);
-    }
-  }
 
   return (
     <div className='movie-card'>
