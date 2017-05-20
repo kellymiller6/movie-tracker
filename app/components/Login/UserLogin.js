@@ -45,6 +45,7 @@ export default class UserLogin extends Component {
     return (
       <form className='user-login'>
         <input type='text'
+               className="form email"
                placeholder='E-Mail'
                value={this.state.email}
                onChange={(e) => this.setState({
@@ -52,6 +53,7 @@ export default class UserLogin extends Component {
                })}
              />
         <input type='text'
+               className="form password"
                placeholder='Password'
                value={this.state.password}
                onChange={(e) => this.setState({
@@ -59,6 +61,7 @@ export default class UserLogin extends Component {
                })}
              />
         <button type='submit'
+                className="form submit"
                 onClick={(e) => this.handleSubmit(e)}>
                 Login
               </button>

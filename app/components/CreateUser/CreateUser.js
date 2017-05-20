@@ -50,6 +50,7 @@ export default class CreateUser extends Component {
     return (
       <form className='create-user'>
         <input type='text'
+               className="form name"
                placeholder='Name'
                value={this.state.name}
                onChange={(e) => this.setState({
@@ -57,6 +58,7 @@ export default class CreateUser extends Component {
                })}
              />
         <input type='text'
+               className="form email"
                placeholder='E-Mail'
                value={this.state.email}
                onChange={(e) => this.setState({
@@ -64,6 +66,7 @@ export default class CreateUser extends Component {
                })}
              />
         <input type='text'
+               className="form password"
                placeholder='Password'
                value={this.state.password}
                onChange={(e) => this.setState({
@@ -71,6 +74,7 @@ export default class CreateUser extends Component {
                })}
              />
         <button type='submit'
+                className="form submit"
                 onClick={(e) => this.handleSubmit(e)}>
                 Create User Account
               </button>
