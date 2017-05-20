@@ -11,7 +11,12 @@ export default class MovieGrid extends Component {
 
   componentWillMount() {
     this.props.fetchMovies();
-    this.props.fetchFavorites(this.props.user);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.user.name !== nextProps.user.name) {
+      this.props.fetchFavorites(nextProps.user)
+    }
   }
 
   render() {
