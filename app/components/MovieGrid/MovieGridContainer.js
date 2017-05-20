@@ -4,8 +4,8 @@ import { fetchMovies, addFavorite, deleteFavorite, fetchFavorites } from '../../
 
 const mapStateToProps = (state) => {
   return { movies: state.movieReducer,
-           user: state.userReducer
-           favorites: state.favoritesReducer }
+           user: state.userReducer,
+           favorites: state.favoriteReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {
