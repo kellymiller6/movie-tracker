@@ -10,17 +10,23 @@ export default class MovieGrid extends Component {
 
   componentWillMount() {
     this.props.fetchMovies();
+    getFavorites();
+  }
+
+  getFavorites() {
+    const favList = this.props.fetchFavorites(this.props.user);
+    return favList;
   }
 
   render() {
-    const { movies, user, addFavorite, fetchFavorites } = this.props;
+    const { movies, user, addFavorite } = this.props;
     const grid = movies.map((movie) => {
       return (
         <Movie key={movie.id}
                movieData={movie}
                user={user}
                addFavorite={addFavorite}
-               fetchFavorites={fetchFavorites}
+               favorites={favList}
              />
       )
     });
