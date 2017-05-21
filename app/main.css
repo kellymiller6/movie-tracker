@@ -93,6 +93,20 @@ h1 {
   background-color: #255e69;
 }
 
+.favorited {
+  color: #1f2633;
+  height: 29px;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 17px;
+  background-color: aqua;
+  border: solid 2px  #255e69;
+  border-radius: 5px;
+  outline: none;
+}
+
 /*forms: login, create-account*/
 .user-login, .create-user {
   margin-top: 80px;
