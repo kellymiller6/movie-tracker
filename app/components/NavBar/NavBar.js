@@ -20,13 +20,10 @@ export default class NavBar extends Component {
       <div>
         <h2 className='welcome-greeting'>{this.welcomeGreeting()}</h2>
         <NavLink to='/' activeClassName='selected' className="link">Home</NavLink>
-        <NavLink to='/login' activeClassName='selected' className="link">Login</NavLink>
         <NavLink to='/create-account' activeClassName='selected' className="link">Create Account</NavLink>
         <NavLink to='/favorites' activeClassName='selected' className="link">Favorites</NavLink>
-        <button className='logoutButton'
-          onClick={() => this.logUserOut()}>
-          Logout
-        </button>
+        <NavLink to='/login' activeClassName='selected' className="link">Login</NavLink>
+        <a className='link' onClick={() => this.logUserOut()}>Logout</a>
       </div>
     )
   }
