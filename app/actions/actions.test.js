@@ -1,11 +1,21 @@
+import fetchMock from 'fetch-mock';
+import configureMockStore from 'redux-mock-store';
+
 import * as actions from './index.js';
 import mockNewReleases from '../components/MovieGrid/mockNewReleases.json';
 import mockFavorites from '../components/MovieGrid/mockFavorites.json';
 
 describe('actions', () => {
 
+  const store = configureMockStore()();
+
   it('createAccount returns an object with user and type', () => {
-    const user = { name: 'Andrew', email: 'andrew@gmail.com', password:'password', id:1};
+    const user = {
+      name: 'Andrew',
+      email: 'andrew@gmail.com',
+      password:'password',
+      id:1};
+
     const action = actions.createAccount(user);
 
     const returnedObj = {
@@ -50,7 +60,7 @@ describe('actions', () => {
     expect(action).toEqual(expectedAction)
   })
 
-  it('should create an action to receive movies', () => {
+  it('should create an action to receive favorites', () => {
     const favorites = mockFavorites;
     const action = actions.showFavorites(favorites);
 
@@ -61,5 +71,13 @@ describe('actions', () => {
 
     expect(action).toEqual(expectedAction)
   })
+
+  it.skip('should fetch movies', () => {
+    const getFilms =  fetchMock.get('https://api.themoviedb.org/3/movie/now_playing?api_key=cbe22e12e2a525d944ad1729b43212d3&language=en-US&page=1', {status: 200, body: mockNewReleases})
+
+    console.log(store.dispatch(actions.receiveMovies(getFilms.json())))
+
+  })
+
 
 })
