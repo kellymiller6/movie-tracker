@@ -21,6 +21,9 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, fa
   }
 
   const setClass = () => {
+    if (!user.id) {
+      return 'mark-favorite';
+    }
     return !checkFavorites() ? 'mark-favorite' : 'favorited';
   }
 

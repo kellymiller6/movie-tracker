@@ -20,17 +20,21 @@ export default class App extends Component {
           <NavBar />
         </div>
         <Route exact path='/'
-               component={MovieGridContainer}
+               render={({history}) =>
+               <MovieGridContainer history={history} />}
              />
         <Route exact path='/login'
-        render={({history}) => <UserLoginContainer history={history} />}
-        />
+               render={({history}) =>
+               <UserLoginContainer history={history} />}
+             />
         <Route exact path='/create-account'
+
         render={({history}) => <CreateUserContainer history={history} />}
         />
         <Route exact path='/favorites'
         render={({history}) => <FavoritesContainer history={history} />}
         />
+
       </div>
     )
   }
