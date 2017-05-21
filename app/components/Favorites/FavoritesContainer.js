@@ -3,8 +3,7 @@ import Favorites from '../Favorites/Favorites';
 import { deleteFavorite, fetchFavorites } from '../../actions/index.js';
 
 const mapStateToProps = (state) => {
-  return {
-           user: state.userReducer,
+  return { user: state.userReducer,
            favorites: state.favoriteReducer }
 }
 
