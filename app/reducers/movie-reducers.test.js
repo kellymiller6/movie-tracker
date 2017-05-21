@@ -3,7 +3,6 @@ import movieReducer from './movie-reducers';
 describe('movieReducer', () => {
 
   it('should return a default state', () => {
-    
     expect(movieReducer(undefined, {})).toEqual([])
   });
 
@@ -17,8 +16,7 @@ describe('movieReducer', () => {
         average: 5.6
       }
     ];
-    const expectedAction = { type: 'RECEIVE_MOVIES' };
 
-    expect(movieReducer(mockMovies, )).toEqual(mockMovies);
+    expect(movieReducer(mockMovies, 'RECEIVE_MOVIES')).toEqual(mockMovies);
   });
 });

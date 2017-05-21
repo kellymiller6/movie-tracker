@@ -18,9 +18,8 @@ describe('userReducer', () => {
       email: 'andrew@gmail.com',
       password: 'password',
     };
-    const expectedAction = { type: 'CREATE_ACCOUNT' };
 
-    expect(userReducer(mockUser, expectedAction)).toEqual(mockUser);
+    expect(userReducer(mockUser, 'CREATE_ACCOUNT')).toEqual(mockUser);
   });
 
   it('should sign the user in', () => {
@@ -28,9 +27,8 @@ describe('userReducer', () => {
       email: 'andrew@gmail.com',
       password: 'password'
     };
-    const expectedAction = { type: 'SIGN_IN' };
 
-    expect(userReducer(mockUser, expectedAction)).toEqual(mockUser);
+    expect(userReducer(mockUser, 'SIGN_IN')).toEqual(mockUser);
   });
 
   it('should sign the user out', () => {
@@ -40,8 +38,7 @@ describe('userReducer', () => {
       password: '',
       id: ''
     };
-    const expectedAction = { type: 'SIGN_OUT' };
 
-    expect(userReducer(undefined, expectedAction)).toEqual(mockUser);
+    expect(userReducer(undefined, 'SIGN_OUT')).toEqual(mockUser);
   });
 });

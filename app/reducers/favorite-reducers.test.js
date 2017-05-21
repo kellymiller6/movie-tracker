@@ -16,8 +16,7 @@ describe('favoriteReducer', () => {
        overview: 'Movie overview',
        average: 5.6
     }];
-    const expectedAction = { type: 'SHOW_FAVORITES' };
 
-    expect(favoriteReducer(mockFavorites, expectedAction)).toEqual(mockFavorites)
+    expect(favoriteReducer(mockFavorites, 'SHOW_FAVORITES')).toEqual(mockFavorites)
   });
 });
