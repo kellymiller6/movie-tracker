@@ -20,14 +20,11 @@ h1 {
   font-size: 18px;
   text-decoration: none;
   color: #1f2633;
+  cursor: pointer;
 }
 
 .link:hover {
   font-weight: bold;
-}
-
-a {
-  cursor: pointer;
 }
 
 .welcome-greeting {
