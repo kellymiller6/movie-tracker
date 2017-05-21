@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
-import NavBar from '../NavBar/NavBar';
+import NavBarContainer from '../NavBar/NavBarContainer';
 import MovieGridContainer from '../MovieGrid/MovieGridContainer';
 import FavoritesContainer from '../Favorites/FavoritesContainer';
 import CreateUserContainer from '../CreateUser/CreateUserContainer';
@@ -17,7 +17,10 @@ export default class App extends Component {
       <div className='app'>
         <div className='header'>
           <h1>Movie Watcher</h1>
-          <NavBar />
+          <Route path='/'
+                 render={({history}) =>
+                 <NavBarContainer history={history} />}
+               />
         </div>
         <Route exact path='/'
                render={({history}) =>

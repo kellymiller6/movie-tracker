@@ -19,17 +19,8 @@ export default class MovieGrid extends Component {
     }
   }
 
-  logUserOut() {
-    this.props.signOut();
-    this.props.history.replace('/login');
-  }
-
   render() {
     const { movies, user, addFavorite, deleteFavorite, fetchFavorites, favorites, history} = this.props;
-
-    const welcomeGreeting = () => {
-      return user.id ? `Hello, ${user.name}` : '';
-    }
 
     const grid = () => movies.map((movie, index) => {
       return (
@@ -47,8 +38,6 @@ export default class MovieGrid extends Component {
 
     return (
       <div>
-        <h2>{ welcomeGreeting() }</h2>
-        <button onClick={() => this.logUserOut()}>Logout</button>
         <div className='movie-grid'>
           { grid() }
         </div>
