@@ -1,3 +1,7 @@
+.favorited {
+  background-color: red;
+}
+
 /*header*/
 .header {
   height: 140px;

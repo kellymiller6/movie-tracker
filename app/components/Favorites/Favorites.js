@@ -10,9 +10,9 @@ const Favorites = ({user, deleteFavorite, fetchFavorites, favorites}) => {
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             />
           </div>
-          <button className='mark-favorite favorited'
+          <button className='favorited'
                   onClick={() => { deleteFavorite(user, movie.movie_id)
-                             return fetchFavorites(user) } }>
+                              return fetchFavorites(user) } }>
                   Favorite
                 </button>
           <h3 className='movie-title'>{movie.title}</h3>

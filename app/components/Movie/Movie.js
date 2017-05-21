@@ -20,6 +20,10 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, fa
     }
   }
 
+  const setClass = () => {
+    return !checkFavorites() ? 'mark-favorite' : 'favorited';
+  }
+
   return (
     <div className='movie-card'>
       <div className='container'>
@@ -27,7 +31,7 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, fa
              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
            />
       </div>
-      <button className='mark-favorite'
+      <button className={setClass()}
               onClick={() => addToFavorites()}>
               Favorite
             </button>
