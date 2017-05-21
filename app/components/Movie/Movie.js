@@ -2,11 +2,26 @@ import React from 'react';
 
 import './Movie.css';
 
-const Movie = ({movieData, user, addFavorite, deleteFavorite, favorites}) => {
+const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, favorites}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
-  console.log(favorites);
-  
+
+  const checkFavorites = () => {
+    return favorites.find(movie => {
+      return movie.movie_id === id;
+    });
+  }
+
+  const addToFavorites = () => {
+    if (!checkFavorites()) {
+      addFavorite(id, user, title, poster_path, release_date, vote_average, overview);
+      return fetchFavorites(user);
+    } else {
+      deleteFavorite(user, id);
+      return fetchFavorites(user);
+    }
+  }
+
   return (
     <div className='movie-card'>
       <div className='container'>
@@ -15,7 +30,7 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, favorites}) => {
            />
       </div>
       <button className='mark-favorite'
-              onClick={() => favoriteMovie()}>
+              onClick={() => addToFavorites()}>
               Favorite
             </button>
       <h3 className='movie-title'>{title}</h3>
