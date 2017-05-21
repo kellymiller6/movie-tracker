@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Movie.css';
-
 const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, favorites}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
