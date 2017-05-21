@@ -6,7 +6,7 @@ import MovieGridContainer from '../MovieGrid/MovieGridContainer';
 import CreateUserContainer from '../CreateUser/CreateUserContainer';
 import UserLoginContainer from '../Login/UserLoginContainer';
 
-export default class App  extends Component {
+export default class App extends Component {
   constructor(){
     super()
   }
