@@ -14,12 +14,6 @@ export default class App  extends Component {
   render() {
     return (
       <div className='app'>
-        <Route exact path='/login'
-               render={({history}) => <UserLoginContainer history={history} />}
-             />
-        <Route exact path='/create-account'
-               render={({history}) => <CreateUserContainer history={history} />}
-             />
         <div className='header'>
           <h1>Movie Watcher</h1>
           <NavBar />
@@ -27,6 +21,12 @@ export default class App  extends Component {
         <Route exact path='/'
                component={MovieGridContainer}
              />
+        <Route exact path='/login'
+        render={({history}) => <UserLoginContainer history={history} />}
+        />
+        <Route exact path='/create-account'
+        render={({history}) => <CreateUserContainer history={history} />}
+        />
       </div>
     )
   }

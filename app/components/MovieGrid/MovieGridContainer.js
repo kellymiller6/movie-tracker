@@ -12,8 +12,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchMovies: () =>  dispatch(fetchMovies()),
     addFavorite: (id, user, title, poster_path, release_date, vote_average, overview) =>
+
       dispatch(addFavorite(id, user, title, poster_path, release_date, vote_average, overview)),
     deleteFavorite: (user, id) => dispatch(deleteFavorite(user, id)),
+
     fetchFavorites: (user) => dispatch(fetchFavorites(user))
   }
 }
