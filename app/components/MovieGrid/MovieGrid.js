@@ -25,7 +25,7 @@ export default class MovieGrid extends Component {
   }
 
   render() {
-    const { movies, user, addFavorite, deleteFavorite, fetchFavorites, favorites} = this.props;
+    const { movies, user, addFavorite, deleteFavorite, fetchFavorites, favorites, history} = this.props;
 
     const welcomeGreeting = () => {
       return user.id ? `Hello, ${user.name}` : '';
@@ -40,6 +40,7 @@ export default class MovieGrid extends Component {
                deleteFavorite={deleteFavorite}
                fetchFavorites={fetchFavorites}
                favorites={favorites}
+               history={history}
              />
       )
     });

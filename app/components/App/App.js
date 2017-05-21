@@ -28,13 +28,13 @@ export default class App extends Component {
                <UserLoginContainer history={history} />}
              />
         <Route exact path='/create-account'
-
-        render={({history}) => <CreateUserContainer history={history} />}
-        />
+               render={({history}) =>
+               <CreateUserContainer history={history} />}
+             />
         <Route exact path='/favorites'
-        render={({history}) => <FavoritesContainer history={history} />}
-        />
-
+               render={({history}) =>
+               <FavoritesContainer history={history} />}
+             />
       </div>
     )
   }

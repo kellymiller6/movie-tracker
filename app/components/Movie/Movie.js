@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, favorites}) => {
+const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, favorites, history}) => {
 
   const { id, title, poster_path, release_date, vote_average, overview } = movieData;
 
@@ -11,7 +11,9 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, fa
   }
 
   const addToFavorites = () => {
-    if (!checkFavorites()) {
+    if (!user.id) {
+      return history.replace('/login');
+    } else if (!checkFavorites()) {
       addFavorite(id, user, title, poster_path, release_date, vote_average, overview);
       return fetchFavorites(user);
     } else {
