@@ -1,4 +1,6 @@
 import * as actions from './index.js';
+import mockNewReleases from '../components/MovieGrid/mockNewReleases.json';
+import mockFavorites from '../components/MovieGrid/mockFavorites.json';
 
 describe('actions', () => {
 
@@ -21,6 +23,40 @@ describe('actions', () => {
     const expectedAction = {
       type: 'SIGN_IN',
       user
+    }
+
+    expect(action).toEqual(expectedAction)
+  })
+
+  it('should create an action to signout', () => {
+    const action = actions.signOut();
+
+    const expectedAction = {
+      type: 'SIGN_OUT'
+    }
+
+    expect(action).toEqual(expectedAction)
+  })
+
+  it('should create an action to receive movies', () => {
+    const movies = mockNewReleases;
+    const action = actions.receiveMovies(movies);
+
+    const expectedAction = {
+      type: 'RECEIVE_MOVIES',
+      movies
+    }
+
+    expect(action).toEqual(expectedAction)
+  })
+
+  it('should create an action to receive movies', () => {
+    const favorites = mockFavorites;
+    const action = actions.showFavorites(favorites);
+
+    const expectedAction = {
+      type: 'SHOW_FAVORITES',
+      favorites
     }
 
     expect(action).toEqual(expectedAction)
