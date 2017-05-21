@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Favorites = ({user, deleteFavorite, fetchFavorites, favorites, history}) => {
-  const faves = () => favorites.map(movie => {
+  const faves = () => favorites.map((movie, index) => {
     return (
-      <div className='movie-card'>
+      <div className='movie-card' key={index}>
         <div className='container'>
           <img className='movie-img'
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
