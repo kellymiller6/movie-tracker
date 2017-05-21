@@ -3,6 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 
 import NavBar from '../NavBar/NavBar';
 import MovieGridContainer from '../MovieGrid/MovieGridContainer';
+import FavoritesContainer from '../Favorites/FavoritesContainer';
 import CreateUserContainer from '../CreateUser/CreateUserContainer';
 import UserLoginContainer from '../Login/UserLoginContainer';
 
@@ -27,9 +28,13 @@ export default class App extends Component {
                <UserLoginContainer history={history} />}
              />
         <Route exact path='/create-account'
-               render={({history}) =>
-               <CreateUserContainer history={history} />}
-             />
+
+        render={({history}) => <CreateUserContainer history={history} />}
+        />
+        <Route exact path='/favorites'
+        render={({history}) => <FavoritesContainer history={history} />}
+        />
+
       </div>
     )
   }

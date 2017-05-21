@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Favorites = ({user, deleteFavorite, fetchFavorites, favorites}) => {
+export default class Favorites extends Component{
+  constructor(){
+    super()
+  }
 
-  const faves = () => favorites.map(movie => {
+
+  componentWillMount(){
+    this.props.fetchFavorites(this.props.user);
+  }
+
+  render(){
+    const { favorites, user, deleteFavorite, fetchFavorites } = this.props
+    const faves = () => favorites.map(movie => {
       return (
         <div className='movie-card'>
           <div className='container'>
@@ -28,6 +38,5 @@ const Favorites = ({user, deleteFavorite, fetchFavorites, favorites}) => {
       { faves() }
     </div>
   )
+  }
 }
-
-export default Favorites;

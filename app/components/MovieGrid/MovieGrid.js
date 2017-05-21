@@ -50,12 +50,6 @@ export default class MovieGrid extends Component {
         <button onClick={() => this.logUserOut()}>Logout</button>
         <div className='movie-grid'>
           { grid() }
-          <h1>These are the favorites</h1>
-          <Favorites user={user}
-            deleteFavorite={deleteFavorite}
-            fetchFavorites={fetchFavorites}
-            favorites={favorites}
-          />
         </div>
       </div>
     )
