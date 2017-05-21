@@ -8,7 +8,7 @@ const Movie = ({movieData, user, addFavorite, deleteFavorite, fetchFavorites, fa
 
   const checkFavorites = () => {
     return favorites.find(movie => {
-      return movie.movie_id === id;
+      return movie.title === title;
     });
   }
 

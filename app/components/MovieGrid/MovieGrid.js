@@ -21,7 +21,7 @@ export default class MovieGrid extends Component {
 
   render() {
     const { movies, user, addFavorite, deleteFavorite, fetchFavorites, favorites} = this.props;
-    const grid = movies.map((movie, index) => {
+    const grid = () => movies.map((movie, index) => {
       return (
         <Movie key={index}
                movieData={movie}
@@ -36,7 +36,7 @@ export default class MovieGrid extends Component {
 
     return (
       <div className='movie-grid'>
-        {grid}
+        { grid() }
       </div>
     )
   }
