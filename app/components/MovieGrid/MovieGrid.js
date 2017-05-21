@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
 import Movie from '../Movie/Movie';
-// import Favorites from '../Favorites/Favorites';
+import Favorites from '../Favorites/Favorites';
 
 export default class MovieGrid extends Component {
   constructor() {
@@ -36,6 +36,12 @@ export default class MovieGrid extends Component {
 
     return (
       <div className='movie-grid'>
+      <h1>These are the favorites</h1>
+      <Favorites user={user}
+        deleteFavorite={deleteFavorite}
+        fetchFavorites={fetchFavorites}
+        favorites={favorites}
+      />
         { grid() }
       </div>
     )
