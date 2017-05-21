@@ -34,7 +34,7 @@ describe.skip('FavoritesContainer', () => {
 
 describe('Favorites component', () => {
 
-  it('should render expected elements', () => {
+  it('should render expected elements without logged in user', () => {
     const userData = {name: '', email: '', password: '', id: ''}
     const wrapper = shallow(<Favorites user={userData} deleteFavorite={()=>{}} fetchFavorites={()=>{}} favorites={{}} history />);
 
