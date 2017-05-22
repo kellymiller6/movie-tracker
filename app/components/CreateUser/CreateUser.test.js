@@ -59,9 +59,9 @@ describe('CreateUser component', () => {
   it.skip('should redirect to login if user account exists', async () => {
     spyOn(browserHistory, 'replace');
 
-    fetchMock.get('http://localhost:3000/api/users/', {
-      headers: {"Content-Type": "application/json"},
-      status: 500
+    fetchMock.mock('http://localhost:3000/api/users/', {
+      status: 500,
+      headers: {"Content-Type": "application/json"}
     });
 
     const nameInput = Component.find('.name');

@@ -44,6 +44,7 @@ export default class CreateUser extends Component {
     })
     .then(resp => resp.json())
     .then(users => this.handleExists(users))
+    .catch(error => alert('Error!'))
   }
 
   render() {
