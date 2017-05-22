@@ -5,11 +5,11 @@ import thunk from 'redux-thunk';
 import App from './App';
 
 describe('App', () => {
-  const wrapper = shallow(<App />)
+  const wrapper = shallow(<App />);
 
   it('should render the expected elements', () => {
 
     expect(wrapper.find('h1').text()).toEqual('Movie Watcher');
     expect(wrapper.find('Route').length).toBe(5);
-  })
-})
+  });
+});
