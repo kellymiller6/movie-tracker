@@ -31,16 +31,21 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 20px;
-  margin-top: 100px;
+  margin-left: 25px;
+  margin-top: 104px;
+  font-family: 'Khula', sans-serif;
+  color: #1f2633;
 }
+
+
+
 
 #main {
   text-align: center;
 }
 
 /*movie grid*/
-.movie-grid{
+.movie-grid, .favorites-grid{
   display: flex;
   flex-wrap: wrap;
   background-color: #d9e1e2;
@@ -144,6 +149,10 @@ h1 {
   font-weight: bold;
 }
 
+
+@media screen and (max-width: 950px) {
+
+}
 
 @media screen and (max-width: 430px) {
   .header {
