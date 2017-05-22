@@ -25,6 +25,18 @@ export default class NavBar extends Component {
     }
   }
 
+  toggleAccount() {
+    if (!this.props.user.id) {
+      return <NavLink to='/create-account'
+               activeClassName='selected'
+               className="link">Create Account</NavLink>
+    } else {
+      return <NavLink to='/favorites'
+               activeClassName='selected'
+               className="link">Favorites</NavLink>
+    }
+  }
+
   render() {
     return (
       <div>
@@ -32,12 +44,7 @@ export default class NavBar extends Component {
         <NavLink to='/'
                  activeClassName='selected'
                  className="link">Home</NavLink>
-        <NavLink to='/create-account'
-                 activeClassName='selected'
-                 className="link">Create Account</NavLink>
-        <NavLink to='/favorites'
-                 activeClassName='selected'
-                 className="link">Favorites</NavLink>
+        {this.toggleAccount()}
         {this.toggleLog()}
       </div>
     )
