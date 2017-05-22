@@ -18,7 +18,11 @@ export default class UserLogin extends Component {
     });
 
     if (!user) {
-      return this.setState({error: 'Email and/or password do not match'});
+      return this.setState({
+        email: '',
+        password: '',
+        error: 'Email and/or password do not match'
+      });
     } else {
       history.replace('/');
       return signIn(user);
