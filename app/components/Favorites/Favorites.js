@@ -22,21 +22,9 @@ const Favorites = ({user, deleteFavorite, fetchFavorites, favorites, history}) =
       )
     });
 
-  const checkUser = () => {
-    if (!user.id) {
-      return (
-        <div>
-          <h2>Please log in to view favorites</h2>
-        </div>
-      )
-    } else {
-      return faves();
-    }
-  }
-
   return (
     <div className='favorites-grid'>
-      { checkUser() }
+      { faves() }
     </div>
   )
 }
