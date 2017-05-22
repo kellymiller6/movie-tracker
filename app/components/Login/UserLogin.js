@@ -6,20 +6,24 @@ export default class UserLogin extends Component {
     this.state = {
       email: '',
       password: '',
+      error: ''
     }
   }
 
   handleErrors(users) {
     const { email, password } = this.state;
     const { signIn, history } = this.props;
-
-    let user = users.data.find(user => {
+    const user = users.data.find(user => {
       return (user.email === email && user.password === password);
     });
 
     if (!user) {
-      alert('could not find user, please check password or create an account');
-    } else if (user) {
+      return this.setState({
+        email: '',
+        password: '',
+        error: 'Email and/or password do not match'
+      });
+    } else {
       history.replace('/');
       return signIn(user);
     }
@@ -34,11 +38,9 @@ export default class UserLogin extends Component {
     })
     .then(resp => resp.json())
     .then(users => this.handleErrors(users))
-
     .catch((error) => {
       console.log(error, 'cannot find user');
     })
-
   }
 
   render() {
@@ -65,6 +67,7 @@ export default class UserLogin extends Component {
                 onClick={(e) => this.handleSubmit(e)}>
                 Login
               </button>
+        <h2>{this.state.error}</h2>
       </form>
     )
   }
