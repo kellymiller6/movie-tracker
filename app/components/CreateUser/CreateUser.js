@@ -19,7 +19,12 @@ export default class CreateUser extends Component {
     });
 
     if (user) {
-      return this.setState({error: 'Email is already in use.'});
+      return this.setState({
+        name: '',
+        email: '',
+        password: '',
+        error: 'Email is already in use'
+      });
     } else {
       fetch('/api/users/new', {
         method: "POST",
