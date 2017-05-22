@@ -38,9 +38,9 @@ describe('Movie', () => {
                                  favorites={favorites}
                                  history={browserHistory}/>);
 
-    const favoriteBtn = wrapper.find('button');
+    const favoriteButton = wrapper.find('button');
 
-    favoriteBtn.simulate('click');
+    favoriteButton.simulate('click');
 
     expect(browserHistory.replace).toHaveBeenCalledWith('/login');
   });
