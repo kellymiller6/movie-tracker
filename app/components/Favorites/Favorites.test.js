@@ -36,17 +36,6 @@ describe.skip('FavoritesContainer', () => {
 
 describe('Favorites component', () => {
 
-  it.skip('should render expected elements without logged in user', () => {
-    const userData = {name: '', email: '', password: '', id: ''};
-    const wrapper = shallow(<Favorites user={userData}
-                                       deleteFavorite={()=>{}}
-                                       fetchFavorites={()=>{}}
-                                       favorites={{}}
-                                       history />);
-
-    expect(wrapper.find('h2').text()).toEqual('Please log in to see favorites');
-  })
-
   it('should render expected elements with logged in user', () => {
     const userData = {name: 'Nick', email: 'email', password: 'password', id: '2'};
     const movie = [

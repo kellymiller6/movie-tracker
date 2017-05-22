@@ -48,9 +48,9 @@ describe('NavBar component', () => {
   });
 
   it.skip('should display login button if user is undefined', () => {
-    const wrapper = mount(<NavBar user={{}} history={browserHistory} />);
+    const wrapper = shallow(<NavBar user={{}} history={browserHistory} />);
 
-    const button = wrapper.find('link').last()
+    const button = wrapper.find('NavLink').last();
 
     expect(button.text()).toEqual('Login');
   });
