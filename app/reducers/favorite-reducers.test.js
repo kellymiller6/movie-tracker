@@ -5,9 +5,9 @@ describe('favoriteReducer', () => {
   it('should return a default state', () => {
 
     expect(favoriteReducer(undefined, {})).toEqual([])
-  })
+  });
 
-  it('should show favorites', () => {
+  it('should return an array of favorites', () => {
     const mockFavorites = [{
        id: 1,
        poster: 'string',
@@ -15,9 +15,8 @@ describe('favoriteReducer', () => {
        release: '2017-03-23',
        overview: 'Movie overview',
        average: 5.6
-    }]
+    }];
 
     expect(favoriteReducer(mockFavorites, 'SHOW_FAVORITES')).toEqual(mockFavorites)
-  })
-
-})
+  });
+});

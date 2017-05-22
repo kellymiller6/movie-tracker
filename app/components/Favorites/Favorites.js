@@ -26,7 +26,7 @@ const Favorites = ({user, deleteFavorite, fetchFavorites, favorites, history}) =
     if (!user.id) {
       return (
         <div>
-          <h2>Please log in to see favorites</h2>
+          <h2>Please log in to view favorites</h2>
         </div>
       )
     } else {
