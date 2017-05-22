@@ -6,30 +6,27 @@ export default class CreateUser extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      error:''
     }
   }
 
   handleExists(users) {
     const { email, password, name } = this.state;
     const { signIn, history } = this.props;
-
-    let user = users.data.find(user => {
-      return (user.email === email );
+    const user = users.data.find(user => {
+      return (user.email === email);
     });
 
-    if(user) {
-      alert('user email already exists');
-      history.replace('/login');
-      alert('please login!')
-    } else if (!user) {
+    if (user) {
+      this.setState({error: 'User Email Is Already In Use'});
+    } else {
       fetch('/api/users/new', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({name, email, password})
       })
       history.replace('/login');
-      alert('account created! please login!')
       createAccount(user);
     }
   }
@@ -44,7 +41,6 @@ export default class CreateUser extends Component {
     })
     .then(resp => resp.json())
     .then(users => this.handleExists(users))
-    .catch(error => alert('Error!'))
   }
 
   render() {
@@ -79,6 +75,7 @@ export default class CreateUser extends Component {
                 onClick={(e) => this.handleSubmit(e)}>
                 Create User Account
               </button>
+        <h2>{this.state.error}</h2>
       </form>
     )
   }
