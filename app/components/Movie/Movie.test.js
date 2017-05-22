@@ -28,7 +28,7 @@ describe('Movie', () => {
     expect(wrapper.find('.movie-title').text()).toBe('The Boss Baby')
   });
 
-  it('should redirect to login if user is not signed in', () => {
+  it('should redirect to login if user is undefined', () => {
     spyOn(browserHistory, 'replace');
     const wrapper = mount(<Movie movieData={movie}
                                  user=''
