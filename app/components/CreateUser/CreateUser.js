@@ -19,7 +19,7 @@ export default class CreateUser extends Component {
     });
 
     if (user) {
-      this.setState({error: 'User Email Is Already In Use'});
+      return this.setState({error: 'Email is already in use.'});
     } else {
       fetch('/api/users/new', {
         method: "POST",
