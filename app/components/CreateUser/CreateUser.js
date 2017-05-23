@@ -40,6 +40,10 @@ export default class CreateUser extends Component {
     e.preventDefault();
     const { name, email, password } = this.state;
 
+    if (!name || !email || !password) {
+      return this.setState({ error: 'Please include all required fields' });
+    }
+
     fetch('/api/users/', {
       method: "GET",
       headers: {"Content-Type": "application/json"},
