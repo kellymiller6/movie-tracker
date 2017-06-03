@@ -46,29 +46,4 @@ describe('NavBar component', () => {
     expect(wrapper.find('h2').text()).toEqual('');
     expect(wrapper.find('NavLink').length).toBe(3);
   });
-
-  it.skip('should display login button if user is undefined', () => {
-    const wrapper = shallow(<NavBar user={{}} history={browserHistory} />);
-
-    const button = wrapper.find('NavLink').last();
-
-    expect(button.text()).toEqual('Login');
-  });
-
-  it.skip('should redirect to login if user logs out', () => {
-    spyOn(browserHistory, 'replace');
-    const mockUser = {
-      name: 'Dude',
-      email: 'suh@gmail.com',
-      password: 'gucci',
-      id: 1
-    }
-    const wrapper = mount(<NavBar user={mockUser} history={browserHistory} />);
-
-    const logOutButton = wrapper.find('a');
-
-    logOutButton.simulate('click');
-
-    expect(browserHistory.replace).toHaveBeenCalledWith('/login');
-  });
 });

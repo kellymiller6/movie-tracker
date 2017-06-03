@@ -27,21 +27,4 @@ describe('Movie', () => {
     expect(wrapper.find('.movie-card').length).toBe(1)
     expect(wrapper.find('.movie-title').text()).toBe('The Boss Baby')
   });
-
-  it('should redirect to login if user is undefined', () => {
-    spyOn(browserHistory, 'replace');
-    const wrapper = mount(<Movie movieData={movie}
-                                 user=''
-                                 addFavorite={addFavorite}
-                                 deleteFavorite={deleteFavorite}
-                                 fetchFavorites={fetchFavorites}
-                                 favorites={favorites}
-                                 history={browserHistory}/>);
-
-    const favoriteButton = wrapper.find('button');
-
-    favoriteButton.simulate('click');
-
-    expect(browserHistory.replace).toHaveBeenCalledWith('/login');
-  });
 });

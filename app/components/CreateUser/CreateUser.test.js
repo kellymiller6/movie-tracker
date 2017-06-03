@@ -55,32 +55,4 @@ describe('CreateUser component', () => {
                                            email: 'kelly@gmail.com',
                                            password: 'thebestpasswordever' });
   });
-
-  it.skip('should redirect to login if user account exists', async () => {
-    spyOn(browserHistory, 'replace');
-
-    fetchMock.mock('http://localhost:3000/api/users/', {
-      status: 500,
-      headers: {"Content-Type": "application/json"}
-    });
-
-    const nameInput = Component.find('.name');
-    nameInput.simulate('change', {target: {value: 'Kelly'}});
-
-    const emailInput = Component.find('.email');
-    emailInput.simulate('change', {target: {value: 'kelly@gmail.com'}});
-
-    const pwInput = Component.find('.password');
-    pwInput.simulate('change', {target: {value: 'thebestpasswordever'}});
-
-    const submitButton = Component.find('button');
-
-    submitButton.simulate('click', {
-      preventDefault: jest.fn()
-    });
-
-    await Component.update();
-
-    expect(browserHistory.replace).toHaveBeenCalledWith('/login');
-  });
 });
