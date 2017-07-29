@@ -14,7 +14,7 @@
     "test:watch": "npm test -- --watch"
   },
   "keywords": [],
-  "author": "Taylor Moore",
+  "author": "Kelly Miller, Leta Keane, Devin Dixon, and Justyna Fields",
   "license": "ISC",
   "dependencies": {
     "babel-jest": "^20.0.3",
